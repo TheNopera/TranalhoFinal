@@ -1,0 +1,56 @@
+<nav class="nav">
+    <div class="container nav_container">
+        <a href="/" class="nav_logo">E-COMMERCE</a>
+        <ul class="nav_list">
+            <li class="nav_item"><a href="/" class="nav_link">Home</a></li>
+            <li class="nav_item"><a href="/#products" class="nav_link">Products</a></li>
+            {{#admin}}
+            <li class="nav_item"><a href="/admin" class="nav_link">Admin</a></li>
+            {{/admin}}
+        </ul>
+        <div class="nav_items">
+            <!-- <a href="/cart">
+                <img src="../image/cart.png" alt="" class="nav_cart" />
+            </a> -->
+            <ul class="nav_list">
+                {{#user}}
+                <p>Welcome, {{user.name}}
+                </p>
+                <li class="nav_item"><a href="/profile" class="nav_link">Profile</a></li>
+                <li class="nav_item"><a href="/auth/logout" class="nav_link logout">Sign out</a></li>
+                {{/user}}
+                {{^user}}
+                <li class="nav_item"><a href="/auth/login" class="nav_link">Sign in</a></li>
+                <li class="nav_item">
+                    <a href="/auth/sign-up" class="nav_link">Sign Up</a>
+                </li>
+                {{/user}}
+            </ul>
+        </div>
+        <span class="hamburger">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </span>
+    </div>
+</nav>
+<nav class="mobile_nav mobile_nav_hide">
+    <ul class="mobile_nav_list">
+        <li class="mobile_nav_item">
+            <a href="/" class="mobile_nav_link">Home</a>
+        </li>
+        <li class="mobile_nav_item">
+            <a href="/" class="mobile_nav_link">Products</a>
+        </li>
+        <li class="mobile_nav_item">
+            <a href="/auth/login" class="mobile_nav_link">Sign In</a>
+        </li>
+        <li class="mobile_nav_item">
+            <a href="/auth/sign-up" class="mobile_nav_link">Sign Up</a>
+        </li>
+        <li class="mobile_nav_item">
+            <a href="/cart" class="mobile_nav_link">Cart</a>
+        </li>
+    </ul>
+</nav>
